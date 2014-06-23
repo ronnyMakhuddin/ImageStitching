@@ -1,0 +1,35 @@
+﻿<Window x:Class="ImageStitching.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Panorama - Łączenie obrazów" Height="600" Width="900" MinWidth="900" MinHeight="600">
+    <Grid>
+        <Menu Height="23" Name="menu" VerticalAlignment="Top" />
+        <TabControl Margin="12,29,12,12" Name="tabControl">
+            <TabItem Header="Wczytywanie zdjęć" Name="tabReadImg">
+                <Grid>
+                    <Image Margin="6,35,185,0" Name="imagePhoto" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    <Button Content="Dodaj obrazy" Height="23" Margin="0,54,15,0" Name="butReadImg" VerticalAlignment="Top" HorizontalAlignment="Right" Width="155" Click="butReadImg_Click" />
+                    <ComboBox Height="23" Margin="0,94,15,0" Name="comboBoxChooseImg" VerticalAlignment="Top" HorizontalAlignment="Right" Width="155" SelectionChanged="comboBoxChooseImg_SelectionChanged" />
+                    <Button Content="Złącz obrazy" Height="23" Margin="0,216,15,0" Name="butImageStitch" VerticalAlignment="Top" HorizontalAlignment="Right" Width="155" Click="butImageStitch_Click" FontWeight="Bold" />
+                    <Label Content="Wczytane obrazy:" Height="28" Margin="0,274,15,0" Name="labelImageNav" VerticalAlignment="Top" HorizontalAlignment="Right" Width="155" />
+                    <Button Content="Następny" Height="23" Margin="0,314,15,0" Name="butImageNext" VerticalAlignment="Top" HorizontalAlignment="Right" Width="155" Click="butImageNext_Click" />
+                    <Button Content="Poprzedni" Height="23" Margin="0,354,15,0" Name="butImagePrev" VerticalAlignment="Top" HorizontalAlignment="Right" Width="155" Click="butImagePrev_Click" />
+                    <CheckBox Content="Rysuj dopasowane punkty" Height="16" HorizontalAlignment="Right" Margin="0,403,15,0" Name="drawPoints" VerticalAlignment="Top" IsChecked="False" />
+                    <Button Content="Usuń obraz" Height="23" HorizontalAlignment="Right" Margin="0,135,15,0" Name="butRemoveImage" VerticalAlignment="Top" Width="155" Click="removeImage_Click" />
+                    <Button Content="Usuń wszystkie obrazy" Height="23" HorizontalAlignment="Right" Margin="0,175,15,0" Name="butRemoveAll" VerticalAlignment="Top" Width="155" Click="removeAll_Click" />
+                    <Button Content="Zapisz panoramę" Height="23" HorizontalAlignment="Right" Margin="0,449,15,0" Name="savePanorama" VerticalAlignment="Top" Width="155" Click="savePanorama_Click" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Panorama" Name="tabPanorama">
+                <Grid>
+                    <Image Margin="0,0,0,0" Name="panorama" Stretch="Uniform" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Punkty" Name="tabPunkty">
+                <Grid>
+                    <Image Margin="10,10,12,0" Name="punkty" Stretch="Uniform" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
